@@ -12,3 +12,14 @@ The repository consists of various DS implementations with its uses in python.
       4. is_empty : _To check if stack is empty_
       5. get_stack : _Get the entire stack_
       
+   - Balanced Parenthesis using Stack
+      
+      Use a stack to check whether or not a string has balanced usage of parenthesis.
+      
+          Example:
+                (), ()(), (({[]}))  <- Balanced.
+                ((), {{{)}], [][]]] <- Not Balanced.
+          
+          Balanced Example: {[]}
+          Non-Balanced Example: (()
+          Non-Balanced Example: ))
