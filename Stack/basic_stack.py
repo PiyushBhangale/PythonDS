@@ -1,21 +1,26 @@
+"""
+Stack Datastructure
+"""
+
+
 class Stack:
-    def __init__(self):
+    def __init__(self):  # Constructor that defines the list of stack
         self.items = []
 
-    def is_empty(self):
+    def is_empty(self):  # To check if stack is empty
         return self.items == []
 
-    def peek(self):
+    def peek(self):  # Return the topmost element
         if not self.is_empty():
             return self.items[-1]
 
-    def push(self, item):
+    def push(self, item):  # push element to top of stack
         self.items.append(item)
 
-    def pop(self):
+    def pop(self):  # pop element at top of stack
         return self.items.pop()
 
-    def get_stack(self):
+    def get_stack(self):  # get the entire stack
         return self.items
 
 
