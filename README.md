@@ -41,31 +41,32 @@ The repository consists of various DS implementations with its uses in python.
 
 ## Bloom Filter
   - Toy Example in Python
-      
-      In order to illustrate how a Bloom filter works let’s consider a toy example. We start with a bit vector; a vector    
-      whose elements are $0$ or $1$. To start, we initialize the bit vector to all zeros. For the purposes of this toy 
-      example, we will restrict our attention to a bit vector of size $20$.
+  
+  
+        In order to illustrate how a Bloom filter works let’s consider a toy example. We start with a bit vector; a vector           whose elements are $0$ or $1$. To start, we initialize the bit vector to all zeros. For the purposes of this toy 
+        example, we will restrict our attention to a bit vector of size $20$.
 
-      bit_vector = [0] * 20
-      print(bit_vector)
-      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-      
-      The next ingredient we require is the use of a couple hash functions, that is, a function that maps data of arbitrary 
-      size to data of a fixed size. The types of hash functions used in Bloom filters are generally not of the “cryptographic 
-      variety”, for example, one usually wouldn’t use something like MD5. Non-cryptographic hash functions like Murmur and 
-      FNV are mostly used, primarily for their speed over most cryptographic hash functions.
+        bit_vector = [0] * 20
+        print(bit_vector)
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-      There is a nice module in Python called pyhash that consists solely of non-cryptographic hashes.
+        The next ingredient we require is the use of a couple hash functions, that is, a function that maps data of arbitrary 
+        size to data of a fixed size. The types of hash functions used in Bloom filters are generally not of the 
+        “cryptographic 
+        variety”, for example, one usually wouldn’t use something like MD5. Non-cryptographic hash functions like Murmur and 
+        FNV are mostly used, primarily for their speed over most cryptographic hash functions.
 
-      import pyhash
-      Let’s combine the bit vector and non-cryptographic hash functions to put together a toy example of a Bloom filter. 
-      In our example, let’s say we’re using our Bloom filter as a Pokedex; a device to keep track of the Pokemon we have 
-      caught.Each time we catch a Pokemon, we update our Pokedex by running the name of the Pokemon through two hash 
-      functions. The output of the hashes indicates which bits to flip in our bit vector.
+        There is a nice module in Python called pyhash that consists solely of non-cryptographic hashes.
 
-      Hashing the strings “Pikachu” and “Charmander” using the FNV hash algorithm mod 20 (since 20 is the size of our bit 
-      vector in this example) results in 13 and 5. Likewise, hashing the same strings using the Murmur hashing algorithm mod 
-      20 results in 10 and 9, respectively.
+        import pyhash
+        Let’s combine the bit vector and non-cryptographic hash functions to put together a toy example of a Bloom filter. 
+        In our example, let’s say we’re using our Bloom filter as a Pokedex; a device to keep track of the Pokemon we have 
+        caught.Each time we catch a Pokemon, we update our Pokedex by running the name of the Pokemon through two hash 
+        functions. The output of the hashes indicates which bits to flip in our bit vector.
 
-      Feeding the Pokemon strings into the hash functions.
-      We use the outputs of the above hash algorithms to flip the bits located at the respective indices.
+        Hashing the strings “Pikachu” and “Charmander” using the FNV hash algorithm mod 20 (since 20 is the size of our bit 
+        vector in this example) results in 13 and 5. Likewise, hashing the same strings using the Murmur hashing algorithm 
+        mod 20 results in 10 and 9, respectively.
+
+        Feeding the Pokemon strings into the hash functions.
+        We use the outputs of the above hash algorithms to flip the bits located at the respective indices.
