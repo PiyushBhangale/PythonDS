@@ -70,7 +70,8 @@ The repository consists of various DS implementations with its uses in python.
 
         Hashing the strings “Pikachu” and “Charmander” using the FNV hash algorithm mod 20 
         (since 20 is the size of our bit vector in this example) results in 13 and 5. Likewise, 
-        hashing the same strings using the Murmur hashing algorithm mod 20 results in 10 and 9, respectively.
+        hashing the same strings using the Murmur hashing algorithm mod 20 results in 10 and 9.
 
         Feeding the Pokemon strings into the hash functions.
-        We use the outputs of the above hash algorithms to flip the bits located at the respective indices.
+        We use the outputs of the above hash algorithms to flip the bits located at the 
+        respective indices.
