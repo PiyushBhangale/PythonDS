@@ -43,7 +43,8 @@ The repository consists of various DS implementations with its uses in python.
   - Toy Example in Python
   
   
-        In order to illustrate how a Bloom filter works let’s consider a toy example. We start with a bit vector; a vector           whose elements are $0$ or $1$. To start, we initialize the bit vector to all zeros. For the purposes of this toy 
+        In order to illustrate how a Bloom filter works let’s consider a toy example. We start with a bit vector; a vector  
+        whose elements are $0$ or $1$. To start, we initialize the bit vector to all zeros. For the purposes of this toy 
         example, we will restrict our attention to a bit vector of size $20$.
 
         bit_vector = [0] * 20
