@@ -1,3 +1,7 @@
+"""
+Balance Parenthesis 
+"""
+
 from basic_stack import Stack
 
 
